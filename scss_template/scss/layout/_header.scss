@@ -1,0 +1,447 @@
+
+/*
+================================================================================
+|                                     HEADER                                   |
+================================================================================
+*/
+
+.fa {
+	color: $color-brown;
+}
+
+a {
+	text-decoration: none;
+	color: $font-c;
+	text-transform: uppercase;
+}
+
+a:hover {
+	text-decoration: none;
+	color: $color-brown;
+}
+
+header{
+	background: #fff;
+	width: 100%;
+	min-width: $min-width;
+	text-align:left;	
+	order: 1;	
+    -webkit-order: 1;
+}
+
+
+.head {
+	&__top {
+		display: inline-block;
+		margin: 4rem 0 2rem 0;
+		width: 100%;
+		padding: 0 1.5rem 0 1.5rem;
+	}
+
+	&__top:after {
+		content:'';
+		display:block;
+		clear: both;
+
+	}
+
+	&__logo {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		float: left;
+		margin-right: 4rem;
+
+	}
+
+	&__logo--img {
+		width: 24.7rem;
+		height: 3rem;
+		padding-top: 0.25rem;
+	}
+
+	&__logo--slogan {
+		padding: 1rem 0 0 0;
+		@include font($font-size-slogan, $font-h, $color-slogan);
+		text-transform: none;
+	}
+
+	&__input {
+		padding-left: 1rem;
+		border: 0.2rem solid $color-border;
+		width: 45%;
+		@include radius($border-radius);
+		@include font($font-size-input, $font-h, $font-c);
+		height: 3.5rem;
+		background: url('../img/search.svg') no-repeat 99% center;
+		background-size: 2rem;
+	}
+
+	&__contact {
+		display: inline-block;
+		float: right;
+		width: 26%;
+		height: 3rem;
+		&--phone {
+			display: inline-block;
+			float: left;
+			@include font($font-size-phone, $font-h, $font-c);
+			font-weight: bold;
+			
+			p {
+				line-height: 3.5rem;
+			}
+		}
+		&--schedule {
+			float: right;
+			display: inline-block;
+			@include font($font-size-slogan, $font-h, $font-c);
+			line-height: 1.75rem;
+
+			p:first-child {
+				color: $color-brown;
+			}
+
+		}
+	}
+
+	&__bottom {
+		padding: 0 1.5rem 0 1.5rem;
+		line-height: 5.2rem;
+		border-top: 0.2rem solid $color-border;
+		border-bottom: 0.2rem solid $color-border;
+	}
+
+	&__menu {
+		position: relative;
+		display: inline-block;
+		list-style: none;
+
+		&:after {
+			content: '';
+			display: table;
+		}
+
+		&:after {
+			clear: both;
+		}
+
+		ul {
+			width: 24.5rem;
+			margin: 0 0 0 0;
+			padding: 2rem 0 2.5rem 0;
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			top: 120%;
+			left: -1.5rem;
+			z-index: 1;
+			background: #fff;
+			border: 0.2rem solid $color-border;
+			border-radius: $border-radius;
+			transition: all .3s ease-in-out;
+			list-style-type: circle;
+			font-size: 2rem;
+		}
+
+		li:hover>ul {
+			opacity: 1;
+			visibility: visible;
+			margin: 0;
+		}
+
+		ul li ul {
+			top: -40%;
+			left: 102%;
+		}
+
+		ul li {
+			position: relative;
+			margin-left: 4rem;
+			color: $color-brown;
+			line-height: 1.69;
+			.right-icon {
+				background: url('../img/right.svg') no-repeat 99% center;
+				background-size: 1rem;
+			}
+
+			
+		}
+
+		ul .part {
+			padding: 0 0 1rem 2rem;
+			text-transform: uppercase;
+			@include font($font-size-menu, $font-h, $color-brown);
+			font-weight: bold;
+		}
+
+			a {
+				vertical-align: middle;
+				@include font($font-size-menu, $font-h, none);
+				font-weight: normal;
+				display: block;
+				width: 100%;
+				text-transform: uppercase;
+			}
+
+		&--item {
+			display: inline-block;
+			margin-right: 2.5rem;
+			a {
+				vertical-align: middle;
+				@include font($font-size-li, $font-h, none);
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+
+			.list {
+				height: 2rem;
+				vertical-align: sub;
+			}
+
+			li a {
+				text-transform: none;
+				font-weight: normal;
+				@include font($font-size-li-d, $font-h, none);
+
+			}
+		}
+	}
+
+	&__basket-login {
+		display: inline-block;
+		float: right;
+		@include font($font-size-menu, none, $font-c);
+		font-weight: bold;
+	}
+
+	&__basket {
+		display: inline-block;
+
+
+		.fa {
+			vertical-align: middle;
+			color: $color-brown;
+			font-size: 2.5rem;
+			margin: -.5rem 1rem 0 0;
+		}
+
+		.count {
+			border: 1px solid $color-brown;
+			border-radius: 50%;
+			background: $color-brown;
+			color: #fff;
+			font-size: 1.2rem;
+			margin-right: 1.5rem;
+		}
+
+		
+	}
+
+	&__login {
+		display: inline-block;
+		.fa {
+			vertical-align: middle;
+			color: $color-brown;
+			font-size: 2.5rem;
+			margin: -.5rem 1rem 0 1rem;
+		}
+	}
+}
+
+/* Slader start */
+
+.slader {
+	position: relative;
+	width: 1369px;
+	margin: 0 auto;
+	background: #fff;
+	order: 2;	
+    -webkit-order: 2;
+    margin-top: 3rem;
+}
+
+
+
+.sl {
+	width: 100%;
+	margin: 0 auto;
+	background: #fff url('../img/bg-slider.png') no-repeat top center;
+	background-size: cover;
+	&__slide {
+		position: relative;
+		width: 100%;
+	}
+	&__img {
+		width: 100%;
+	}
+
+	&__text {
+		position: absolute;
+		padding: 2rem 4rem;
+		@include vertical_center_transform();
+		width: initial;
+		left: 10%;
+		@include font(4.25rem, 100%, #fff);
+		background: rgba(203, 148, 76, 0.7);
+		line-height: 4.8rem;
+
+	}
+
+
+
+	
+
+	/* Arrows */
+
+	$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+.slick-prev,
+.slick-next {
+    height: 13rem;
+    width: 4rem;
+    background: rgba(203, 148, 76, 0.7);
+    color: #fff;
+    &:hover, &:focus {
+        outline: none;
+        background: rgba(247, 245, 244, 0.7);
+        color: rgba(203, 148, 76, 0.7);
+        &:before {
+            opacity: $slick-opacity-on-hover;
+        }
+    }
+
+    &.slick-disabled:before {
+        opacity: $slick-opacity-not-active;
+    }
+    &:before {
+    	// visibility: hidden;
+        font-family: $slick-font-family;
+        width: 2rem;
+        height: 10rem;
+        font-size: 4rem;
+        line-height: 1;
+        color: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.slick-prev {
+
+	z-index: 1;
+    left: 0;
+    [dir="rtl"] & {
+        left: auto;
+        right: -25px;
+    }
+    &:before {
+        content: $slick-prev-character;
+        [dir="rtl"] & {
+            content: $slick-next-character;
+        }
+    }
+}
+
+.slick-next {
+	z-index: 1;
+    right: 0;
+    [dir="rtl"] & {
+        left: -25px;
+        right: auto;
+    }
+    &:before {
+    	z-index: 3;
+    	width: 2rem;
+    	height: 2rem;
+    	background-color: red;
+        content: $slick-next-character;
+        
+        [dir="rtl"] & {
+            content: $slick-prev-character;
+           
+        }
+    }
+}
+
+
+	/* Dots */
+
+.slick-dotted.slick-slider {
+    margin-bottom: 30px;
+}
+
+.slick-dots {
+    bottom: -7.5rem;
+    li {
+        margin: 0 1.5rem;
+        button {
+            &:before {
+                font-size: 3rem;
+                color: $color-brown;
+            }
+        }
+        &.slick-active button:before {
+            color: $color-brown;
+        }
+    }
+}
+	
+	
+}
+
+/* Slider end */
+
+
+@media screen and (min-width: 1201px) {
+	html {
+		font-size: 8.5px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	html {
+		font-size: 0.6999vw;
+	}
+}
+
+@media screen and (min-width: 992px){
+	
+}
+
+@media screen and (max-width: 991px) {
+	
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.head {
+		&__logo--img {
+			width: 19rem;
+			height: 2.5rem;
+		}
+		&__logo--slogan {
+			font-size: 1.27rem;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	
+}
+
+@media screen and (min-width: 768px) {
+
+	
+}
