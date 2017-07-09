@@ -112,11 +112,19 @@ $(window).bind('load', handler);
 $(window).bind('resize', handler);
 
 
-$('.sl').slick({
+
+
+$(function() {
+
+	$('.sl').slick({
   	autoplay: true,
   	autoplaySpead: 2000,
   	dots: true
-	});
+});
+
+	$('.head__basket').clone().appendTo('.head__basket-up');
+	$('.head__login').clone().appendTo('.head__basket-up');
+});
 
 
 
