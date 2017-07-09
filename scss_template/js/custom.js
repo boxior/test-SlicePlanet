@@ -124,7 +124,14 @@ $(function() {
 
 	$('.head__basket').clone().appendTo('.head__basket-up');
 	$('.head__login').clone().appendTo('.head__basket-up');
+
+
+	function screen_check(){
+		if ($(window).width() <= 767)
+		   $('.sl__img').attr('src', 'img/bg-slider-xs.png');
+	};
+	screen_check();
+	
+
+	$('.head__logo').clone().appendTo('.mobile-logo');
 });
-
-
-

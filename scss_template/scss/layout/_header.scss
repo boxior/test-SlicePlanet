@@ -162,7 +162,7 @@ header{
 			color: $color-brown;
 			line-height: 1.69;
 			.right-icon {
-				background: url('../img/right.svg') no-repeat 99% center;
+				background: url('../img/right-hover.svg') no-repeat 99% center;
 				background-size: 1rem;
 			}
 
@@ -259,16 +259,22 @@ header{
 	}
 }
 
-/* Slader start */
+/*
+================================================================================
+|                                     SLIDER                                   |
+================================================================================
+*/
 
-.slader {
+.slider {
 	position: relative;
-	width: 1369px;
+	width: 100%;
+	max-width: 1369px;
 	margin: 0 auto;
 	background: #fff;
 	order: 2;	
     -webkit-order: 2;
     margin-top: 3rem;
+
 }
 
 
@@ -276,8 +282,9 @@ header{
 .sl {
 	width: 100%;
 	margin: 0 auto;
-	background: #fff url('../img/bg-slider.png') no-repeat top center;
-	background-size: cover;
+	background: #fff;
+	
+
 	&__slide {
 		position: relative;
 		width: 100%;
@@ -303,21 +310,6 @@ header{
 	
 
 	/* Arrows */
-
-	$slick-font-path: "./fonts/" !default;
-$slick-font-family: "slick" !default;
-$slick-loader-path: "./" !default;
-$slick-arrow-color: white !default;
-$slick-dot-color: black !default;
-$slick-dot-color-active: $slick-dot-color !default;
-$slick-prev-character: "\2190" !default;
-$slick-next-character: "\2192" !default;
-$slick-dot-character: "\2022" !default;
-$slick-dot-size: 6px !default;
-$slick-opacity-default: 0.75 !default;
-$slick-opacity-on-hover: 1 !default;
-$slick-opacity-not-active: 0.25 !default;
-
 .slick-prev,
 .slick-next {
     height: 13rem;
@@ -328,24 +320,10 @@ $slick-opacity-not-active: 0.25 !default;
         outline: none;
         background: rgba(247, 245, 244, 0.7);
         color: rgba(203, 148, 76, 0.7);
-        &:before {
-            opacity: $slick-opacity-on-hover;
-        }
-    }
 
-    &.slick-disabled:before {
-        opacity: $slick-opacity-not-active;
     }
     &:before {
-    	visibility: hidden;
-        font-family: $slick-font-family;
-        width: 2rem;
-        height: 10rem;
-        font-size: 4rem;
-        line-height: 1;
-        color: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        font-family: none;
     }
 }
 
@@ -358,10 +336,19 @@ $slick-opacity-not-active: 0.25 !default;
         right: -25px;
     }
     &:before {
-        content: $slick-prev-character;
+        content: url('../img/left.svg');
         [dir="rtl"] & {
-            content: $slick-next-character;
+            content: url('../img/left.svg');
         }
+    }
+
+    &:hover, &:focus {
+    	&:before {
+        content: url('../img/left-hover.svg');
+        [dir="rtl"] & {
+            content: url('../img/left-hover.svg');
+        }
+    }
     }
 }
 
@@ -373,16 +360,24 @@ $slick-opacity-not-active: 0.25 !default;
         right: auto;
     }
     &:before {
-    	z-index: 3;
-    	width: 2rem;
-    	height: 2rem;
-    	background-color: red;
-        content: $slick-next-character;
+        content: url('../img/right.svg');
         
         [dir="rtl"] & {
-            content: $slick-prev-character;
+            content: url('../img/right.svg');
            
         }
+    }
+
+    &:hover, &:focus {
+
+    	&:before {
+        content: url('../img/right-hover.svg');
+        
+        [dir="rtl"] & {
+            content: url('../img/right-hover.svg');
+           
+        }
+    }
     }
 }
 
@@ -413,6 +408,17 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 /* Slider end */
+
+/*
+================================================================================
+|                                     MOBILE                                   |
+================================================================================
+*/
+
+.mobile-nav, .mobile-logo {
+	display: none;
+}
+
 
 
 @media screen and (min-width: 1201px) {
@@ -525,12 +531,13 @@ $slick-opacity-not-active: 0.25 !default;
 		}
 	}
 
-	.slader {
+	.slider {
 		width: 100%;
 		margin-top: 2rem;
 	}
 
 	.sl {
+
 		.slick-prev, .slick-next {
 			width: 2rem;
 			height: 6.5rem;
@@ -560,9 +567,88 @@ $slick-opacity-not-active: 0.25 !default;
 	
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
+	html {
+		font-size: 0.699vw;
+	}
+
+	.main-wrapper {
+		padding: 0;
+	}
+
 	.head {
 		display: none;
+	}
+
+	.slider {
+	
+		width: 100%;
+	}
+
+	.mobile-nav {
+		display: flex;
+
+	
+
+	.fa {
+		font-size: 10rem;
+		color: $color-mobile-menu;
+		margin: 3rem 4rem;
+	}
+
+
+	.sandwich {
+		display: flex;
+		justify-content: center;
+		width: 17%;
+		background: $bg-color-bars;
+
+		.fa {
+			color: #fff;
+		}
+		
+	}
+	
+	.mobile-menu {
+		display: flex;
+		justify-content: space-around;
+		width: 83%;
+		background: $bg-color-mobile-menu;
+	
+	}
+
+}
+
+	.mobile-logo {
+		display: inline-block;
+		width: 100%;
+		.head__logo {
+			width: 100%;
+			padding: 4rem 0 4rem 8rem;
+
+			&--img {
+				width: 60%;
+				height: auto;
+			}
+
+			&--slogan {
+				font-size: 5.3rem;
+			}
+
+
+		}
+
+
+		
+	}
+	
+
+
+	.sl {
+		.slick-next, .slick-prev {
+			width: 8rem;
+			height: 10rem;
+		} 
 	}
 	
 }
