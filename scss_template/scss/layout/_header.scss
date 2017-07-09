@@ -319,7 +319,6 @@ header{
 }
 
 .slick-prev {
-
 	z-index: 1;
     left: 0;
     [dir="rtl"] & {
@@ -334,7 +333,7 @@ header{
     }
 
     &:hover {
-
+		
     	&:before {
         content: url('../img/left-hover.svg');
         [dir="rtl"] & {
@@ -394,7 +393,7 @@ header{
                 color: $color-brown;
             }
         }
-        
+
         &.slick-active button:before {
             color: $color-brown;
         }
