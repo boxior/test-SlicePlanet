@@ -121,9 +121,6 @@ header{
 		&:after {
 			content: '';
 			display: table;
-		}
-
-		&:after {
 			clear: both;
 		}
 
@@ -241,7 +238,7 @@ header{
 			border-radius: 50%;
 			background: $color-brown;
 			color: #fff;
-			font-size: 1.2rem;
+			font-size: 1.5rem;
 			margin-right: 1.5rem;
 		}
 
@@ -277,14 +274,11 @@ header{
 
 }
 
-
-
 .sl {
 	width: 100%;
 	margin: 0 auto;
 	background: #fff;
 	
-
 	&__slide {
 		position: relative;
 		width: 100%;
@@ -305,10 +299,6 @@ header{
 
 	}
 
-
-
-	
-
 	/* Arrows */
 .slick-prev,
 .slick-next {
@@ -316,7 +306,8 @@ header{
     width: 4rem;
     background: rgba(203, 148, 76, 0.7);
     color: #fff;
-    &:hover, &:focus {
+
+    &:hover {
         outline: none;
         background: rgba(247, 245, 244, 0.7);
         color: rgba(203, 148, 76, 0.7);
@@ -342,13 +333,14 @@ header{
         }
     }
 
-    &:hover, &:focus {
+    &:hover {
+
     	&:before {
         content: url('../img/left-hover.svg');
         [dir="rtl"] & {
             content: url('../img/left-hover.svg');
-        }
-    }
+	        }
+	    }
     }
 }
 
@@ -359,6 +351,7 @@ header{
         left: -25px;
         right: auto;
     }
+
     &:before {
         content: url('../img/right.svg');
         
@@ -368,7 +361,7 @@ header{
         }
     }
 
-    &:hover, &:focus {
+    &:hover {
 
     	&:before {
         content: url('../img/right-hover.svg');
@@ -390,14 +383,18 @@ header{
 
 .slick-dots {
     bottom: -7.5rem;
+
     li {
         margin: 0 1.5rem;
+
         button {
+
             &:before {
                 font-size: 3rem;
                 color: $color-brown;
             }
         }
+        
         &.slick-active button:before {
             color: $color-brown;
         }
@@ -429,7 +426,7 @@ header{
 
 @media screen and (max-width: 1200px) {
 	html {
-		font-size: 0.6999vw;
+		font-size: 0.695vw;
 	}
 }
 
@@ -441,9 +438,10 @@ header{
 	
 }
 
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
 	html {
-		font-size: 10px;
+		font-size: 1.3vw;
 	}
 
 	.head {
@@ -559,17 +557,14 @@ header{
 }
 
 @media screen and (max-width: 767px) {
-	
-}
-
-@media screen and (min-width: 768px) {
-
-	
-}
-
-@media screen and (min-width: 320px) and (max-width: 767px) {
 	html {
-		font-size: 0.699vw;
+		font-size: 0.695vw;
+	}
+
+	.sl {
+		.slick-dots {
+			display: none;
+		}
 	}
 
 	.main-wrapper {
@@ -593,7 +588,7 @@ header{
 	.fa {
 		font-size: 10rem;
 		color: $color-mobile-menu;
-		margin: 3rem 4rem;
+		margin: 4rem 4rem;
 	}
 
 
@@ -632,18 +627,14 @@ header{
 			}
 
 			&--slogan {
+				margin-top: 2rem;
 				font-size: 5.3rem;
 			}
 
-
 		}
-
-
 		
 	}
 	
-
-
 	.sl {
 		.slick-next, .slick-prev {
 			width: 8rem;
