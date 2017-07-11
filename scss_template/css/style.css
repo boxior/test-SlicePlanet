@@ -387,8 +387,11 @@ header {
       background: url("../img/right-hover.svg") no-repeat 99% center;
       -webkit-background-size: 1rem 1rem;
               background-size: 1rem; }
+    .head__menu ul li a {
+      line-height: 1.69; }
   .head__menu ul .part {
-    margin: 0 0 .5rem 2.5rem;
+    margin: 0 0 0 2.5rem;
+    padding-bottom: 1rem;
     text-transform: uppercase;
     font-size: 1.6rem;
     line-height: 100%;
