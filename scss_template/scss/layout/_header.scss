@@ -140,16 +140,15 @@ header{
 			transition: all .3s ease-in-out;
 			list-style-type: circle;
 			font-size: 2rem;
+			box-shadow: 0.2rem 0.2rem 0.2rem  rgba(207, 205, 205, 0.7);
 		}
 
 		li:hover>ul {
 			opacity: 1;
 			visibility: visible;
-			margin: 0;
 		}
 
 		ul li ul {
-			padding-top: 1.2rem;
 			top: -40%;
 			left: 102%;
 		}
@@ -168,10 +167,11 @@ header{
 		}
 
 		ul .part {
-			padding: 0 0 1rem 2rem;
+			margin: 0 0 .5rem 2.5rem;
 			text-transform: uppercase;
 			@include font($font-size-menu, $font-h, $color-brown);
 			font-weight: bold;
+			list-style-type: none;
 		}
 
 			a {
@@ -186,7 +186,6 @@ header{
 		&--item {
 			display: inline-block;
 			margin-right: 2.5rem;
-
 			&:last-child {
 				margin-right: 0;
 			}

@@ -369,13 +369,13 @@ header {
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     list-style-type: circle;
-    font-size: 2rem; }
+    font-size: 2rem;
+    -webkit-box-shadow: 0.2rem 0.2rem 0.2rem rgba(207, 205, 205, 0.7);
+            box-shadow: 0.2rem 0.2rem 0.2rem rgba(207, 205, 205, 0.7); }
   .head__menu li:hover > ul {
     opacity: 1;
-    visibility: visible;
-    margin: 0; }
+    visibility: visible; }
   .head__menu ul li ul {
-    padding-top: 1.2rem;
     top: -40%;
     left: 102%; }
   .head__menu ul li {
@@ -388,12 +388,13 @@ header {
       -webkit-background-size: 1rem 1rem;
               background-size: 1rem; }
   .head__menu ul .part {
-    padding: 0 0 1rem 2rem;
+    margin: 0 0 .5rem 2.5rem;
     text-transform: uppercase;
     font-size: 1.6rem;
     line-height: 100%;
     color: #d5aa75;
-    font-weight: bold; }
+    font-weight: bold;
+    list-style-type: none; }
   .head__menu a {
     vertical-align: middle;
     font-size: 1.6rem;
